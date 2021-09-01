@@ -1,0 +1,65 @@
+
+
+
+<div class="split left" >
+<div style="margin: 0px 20px 0px 20px;" >
+    <form [formGroup]="profileForm" (ngSubmit)="mySubmit(profileForm)">
+        <div class="form-group">
+
+            <label>page: </label>
+            <input class="form-control" id="page" type="text" formControlName="page">
+        </div>
+        <div class="form-group">
+
+            <label>pagesize: </label>
+            <input class="form-control" name="pagesize" type="text" formControlName="pagesize">
+        </div>
+        <div class="form-group">
+
+            <label>fromdate: </label>
+            <input class="form-control" name="fromdate" type="date" formControlName="fromdate">
+        </div>
+        <div class="form-group">
+
+            <label>todate: </label>
+            <input class="form-control" name="todate" type="date" formControlName="todate">
+        </div>
+        <div class="form-group">
+
+            <label>min: </label>
+            <input class="form-control" name="min" type="date" formControlName="min">
+        </div>
+        <div class="form-group">
+
+            <label>max: </label>
+            <input class="form-control" name="max" type="date" formControlName="max">
+        </div>
+        <div class="form-group">
+
+            <label>order: </label>
+            <select class="form-control" formControlName="order">
+                <option value="asc">asc</option>
+                <option value="desc">desc</option>
+            </select>
+        </div>
+        <div class="form-group">
+
+            <label>tagged: </label>
+            <input class="form-control" name="tagged" type="text" formControlName="tagged">
+        </div>
+
+        <button style="margin:20px 0px 0px 70px;" class="btn btn-success" type="submit" [disabled]="!profileForm">Click me</button>
+
+    </form>
+</div>
+</div>
+
+<div class="split right">
+<div>
+    <ul class="list-bullets" *ngFor="let item of list_of_ques">
+        <li class="list-group-item"><a href={{item.link}}>{{item.title}}</a></li>
+    </ul>
+</div>
+</div>
+
+
